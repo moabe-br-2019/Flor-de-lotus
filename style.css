@@ -89,7 +89,7 @@ header {
 }
 
 /* Hero Section  */
-/* Hero Section - Reformulação em coluna centralizada */
+
 .hero {
     background-color: var(--primary);
     min-height: auto;
@@ -220,12 +220,14 @@ header {
     margin-bottom: 20px;
     position: relative;
     padding-bottom: 15px;
+    text-align: center; /* Added for centering */
 }
 
 .section-title::after {
     content: '';
     position: absolute;
-    left: 0;
+    left: 50%; /* Changed from 0 to 50% */
+    transform: translateX(-50%); /* Added to center the line */
     bottom: 0;
     width: 60px;
     height: 3px;
@@ -484,6 +486,7 @@ footer {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     z-index: 100;
     transition: all 0.3s;
+    text-decoration: none;
 }
 
 .whatsapp-btn:hover {
@@ -509,6 +512,7 @@ footer {
     opacity: 0;
     transition: all 0.3s;
     pointer-events: none;
+    text-decoration: none;
 }
 
 .back-to-top.active {

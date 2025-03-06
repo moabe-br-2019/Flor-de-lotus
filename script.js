@@ -37,6 +37,14 @@ window.addEventListener('scroll', () => {
     }
 });
 
+// Back to Top Button Functionality
+backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+
 // Smooth Scroll for Safari/IE
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
