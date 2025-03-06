@@ -89,45 +89,67 @@ header {
 }
 
 /* Hero Section  */
+/* Hero Section - Reformulação em coluna centralizada */
 .hero {
     background-color: var(--primary);
-    min-height: 80vh; /* Reduzido de 100vh para 80vh */
+    min-height: auto;
     display: flex;
     align-items: center;
     margin-top: 90px;
-    padding: 80px 0; /* Aumentado de 50px para 80px */
+    padding: 80px 0;
     color: var(--white);
+    text-align: center;
+}
+
+.hero .container {
+    width: 100%;
+    max-width: 1200px; /* Aumentado para permitir um vídeo maior */
+}
+
+.hero .row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
 }
 
 .hero-content {
-    max-width: 600px;
+    max-width: 1200px; /* Aumentado para melhor proporção */
+    width: 100%;
 }
 
 .hero-content h2 {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     margin-bottom: 25px;
-    color: var(--white); /* Corrigido para white em vez de primary */
+    color: var(--white);
 }
 
 .hero-content p {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     margin-bottom: 30px;
-    color: var(--white); /* Corrigido para white em vez de text-light */
-    line-height: 1.8; /* Adicionado para melhor legibilidade */
+    color: var(--white);
+    line-height: 1.8;
 }
 
 .hero-video {
-    flex: 1;
-    min-width: 300px;
-    margin-left: 20px; /* Adicionado para criar espaço entre o conteúdo e o vídeo */
+    width: 100%;
+    max-width: 800px; /* Aumentado para um vídeo maior */
 }
 
-.row {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 40px;
-    justify-content: space-between; /* Adicionado para melhor distribuição do espaço */
+.hero-video > div {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.btn-white {
+    margin-top: 15px;
+    padding: 15px 35px;
+    font-size: 1.1rem;
 }
 
 /*  Fim da Hero Section  */
@@ -502,10 +524,11 @@ footer {
 /* Responsive Design */
 @media screen and (max-width: 992px) {
     .hero {
-        padding: 60px 0;
-        min-height: auto; /* Removido o min-height fixo para melhor responsividade */
+        padding: 60px 20px;
     }
-    
+    .hero-content h2 {
+        font-size: 2.4rem;
+    }
     .row {
         flex-direction: column;
         gap: 30px;
@@ -575,11 +598,26 @@ footer {
     }
 
     .hero {
-        padding: 40px 0;
-        margin-top: 70px; /* Ajustado para telas menores */
+        padding: 50px 15px;
+        margin-top: 70px;
     }
     
     .hero-content h2 {
-        font-size: 2rem; /* Texto menor para telas menores */
+        font-size: 2rem;
+    }
+    
+    .hero-content p {
+        font-size: 1.1rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .hero-content h2 {
+        font-size: 1.8rem;
+    }
+    
+    .btn-white {
+        padding: 12px 30px;
+        font-size: 1rem;
     }
 }
